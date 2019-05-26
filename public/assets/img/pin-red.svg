@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="43 43 42 42">
+  <style>
+    .red-icon{
+    -moz-animation:blink-red normal 10s infinite ease-in-out;
+    /* Firefox */
+    -webkit-animation:blink-red normal 3s infinite ease-in-out;
+    /* Webkit */
+    -ms-animation:blink-red normal 3s infinite ease-in-out;
+    /* IE */
+    animation:blink-red normal 3s infinite ease-in-out;
+    /* Opera */
+    }
+
+    @keyframes blink-red {
+    0% {
+    fill: rgba(231, 76, 6,1)
+    }
+    50% {
+    fill: rgba(31,41,56,1)
+    }
+    100% {
+    fill: rgba(231, 76, 6,1)
+    }
+    }
+    @-webkit-keyframes blink-red {
+    0% {
+    fill: rgba(231, 76, 6,1)
+    }
+    50% {
+    fill: rgba(31,41,56,1)
+    }
+    100% {
+    fill: rgba(231, 76, 6,1)
+    }
+    }
+  </style>
+  <g class="red-icon" fill="#1F2938">
+    <path d="M64 69.18l-4.282-2.51v-5.34l4.28-2.51 4.284 2.51v5.34"/>
+    <path d="M63.47 85v-5.466l-12.75-7.506v-.086l2.834-1.542V57.59l-2.686-1.616 12.6-7.336v-5.632L63.46 43 46 53.24v21.52M64.53 85v-5.466l12.75-7.506v-.086L74.445 70.4V57.59l2.686-1.616-12.6-7.336v-5.632l.01-.006L82 53.24v21.52"/>
+  </g>
+</svg>
