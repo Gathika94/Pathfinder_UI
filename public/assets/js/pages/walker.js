@@ -52,17 +52,59 @@ $(document).ready(function () {
      }
    });*/
 
-  var startingMarker = L.marker([6.798123810285711, 79.89934290802692], {draggable: true})
+  /*var startingMarker = L.marker([6.798123810285711, 79.89934290802692], {draggable: true})
     .addTo(mymap)
     .on('dragend', function() {
     });
-  startingMarker.valueOf()._icon.style.backgroundColor = 'orange'
+  startingMarker.valueOf()._icon.style.backgroundColor = 'orange'*/
 
-  var destinationMarker = L.marker([6.798720400636967, 79.89957900978649], {draggable: true})
+  /*var destinationMarker = L.marker([6.798720400636967, 79.89957900978649], {draggable: true})
     .addTo(mymap)
     .on('dragend', function() {
     });
-  destinationMarker.valueOf()._icon.style.backgroundColor = 'red'
+  destinationMarker.valueOf()._icon.style.backgroundColor = 'red'*/
+
+  var startingMarker = L.shapeMarker([6.798123810285711, 79.89934290802692], {
+    shape: "triangle",
+    radius: 10,
+    color: "red",
+    fill: true,
+    fillOpacity: 1.0
+  })
+
+  var destinationMarker = null;
+
+
+  startingMarker.addTo(mymap)
+
+
+  mymap.on('click', function (e) {
+    if (destinationMarker) { // check
+      mymap.removeLayer(destinationMarker); // remove
+      destinationMarker=null;
+      addNewDestinationMarker(e)
+      console.log(e.latlng)
+      console.log(mymap.getZoom())
+    }else {
+      /*destinationMarker = new L.Marker(e.latlng).addTo(mymap); // set
+      console.log(e.latlng)
+      console.log(mymap.getZoom())*/
+      addNewDestinationMarker(e);
+    }
+  })
+
+  function addNewDestinationMarker(e){
+    destinationMarker = L.shapeMarker(e.latlng, {
+      draggable:true,
+      shape: "circle",
+      radius: 10,
+      color: "blue",
+      fill: true,
+      fillOpacity: 1.0
+    })
+    destinationMarker.addTo(mymap).on('dragend', function() {
+    });
+  }
 
 
 
