@@ -93,6 +93,8 @@ $(document).ready(function () {
     }
   })
 
+  getLatestDevicePosition();
+
   function addNewDestinationMarker(e){
     destinationMarker = L.shapeMarker(e.latlng, {
       draggable:true,
@@ -106,6 +108,19 @@ $(document).ready(function () {
     });
   }
 
-
-
 });
+
+function getLatestDevicePosition() {
+  $.ajax({
+    type: "GET",
+    //dataType: "json",
+    url: "http://localhost:3000/device-pos/1",
+    success: function (data) {
+      console.log(data);
+
+    },
+    error: function (jqXHR, status, err) {
+      alert("Error when receiving the data from external server");
+    },
+  })
+}

@@ -1,6 +1,7 @@
 {
   "ids": {
-    "Todo": 11
+    "Todo": 11,
+    "DevicePos": 2
   },
   "models": {
     "Todo": {
@@ -13,6 +14,9 @@
       "7": "{\"id\":7,\"title\":\"get the milk\",\"desc\":\"string\",\"isComplete\":true}",
       "8": "{\"title\":\"get the milk2\",\"desc\":\"string\",\"isComplete\":true,\"id\":8}",
       "10": "{\"title\":\"asdfasd\",\"desc\":\"asdfas\",\"isComplete\":true,\"id\":10}"
+    },
+    "DevicePos": {
+      "1": "{\"id\":1,\"timestamp\":\"2019-05-29T05:46:24.274Z\",\"lat\":6.798123810285711,\"long\":79.89934290802692,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"self\"}"
     }
   }
 }
