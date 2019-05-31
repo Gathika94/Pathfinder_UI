@@ -10,7 +10,7 @@ export class DevicePos extends Entity {
 
   @property({
     type: 'date',
-    required: true,
+    required: false,
     default: "$now",
   })
   timestamp: string;

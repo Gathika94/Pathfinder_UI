@@ -1,4 +1,7 @@
 var marker;
+var mymap;
+var destinationMarker = null;
+var startingMarker = null;
 
 $(document).ready(function () {
 
@@ -64,19 +67,6 @@ $(document).ready(function () {
     });
   destinationMarker.valueOf()._icon.style.backgroundColor = 'red'*/
 
-  var startingMarker = L.shapeMarker([6.798123810285711, 79.89934290802692], {
-    shape: "triangle",
-    radius: 10,
-    color: "red",
-    fill: true,
-    fillOpacity: 1.0
-  })
-
-  var destinationMarker = null;
-
-
-  startingMarker.addTo(mymap)
-
 
   mymap.on('click', function (e) {
     if (destinationMarker) { // check
@@ -92,35 +82,71 @@ $(document).ready(function () {
       addNewDestinationMarker(e);
     }
   })
-
   getLatestDevicePosition();
-
-  function addNewDestinationMarker(e){
-    destinationMarker = L.shapeMarker(e.latlng, {
-      draggable:true,
-      shape: "circle",
-      radius: 10,
-      color: "blue",
-      fill: true,
-      fillOpacity: 1.0
-    })
-    destinationMarker.addTo(mymap).on('dragend', function() {
-    });
-  }
-
 });
 
 function getLatestDevicePosition() {
   $.ajax({
     type: "GET",
     //dataType: "json",
-    url: "http://localhost:3000/device-pos/1",
+    url: "http://localhost:3000/device-pos?filter[order]=timestamp ASC&filter[limit]=1",
     success: function (data) {
-      console.log(data);
-
+      //console.log(data[0]);
+      var jsonObject = data[0];
+      var startLat = jsonObject["lat"];
+      var startLong = jsonObject["long"];
+      console.log("lat : "+ startLat);
+      console.log("long : "+ startLong);
+      updateDevicePosition(startLat,startLong);
     },
     error: function (jqXHR, status, err) {
       alert("Error when receiving the data from external server");
     },
   })
+}
+
+function updateDevicePosition(startLat,startLong) {
+  if (startingMarker) { // check
+    mymap.removeLayer(startingMarker); // remove
+    addNewStartingMarker(startLat, startLong);
+    /*console.log(e.latlng);
+    console.log(mymap.getZoom())*/
+  }else {
+    /*destinationMarker = new L.Marker(e.latlng).addTo(mymap); // set
+    console.log(e.latlng)
+    console.log(mymap.getZoom())*/
+    addNewStartingMarker(startLat,startLong);
+  }
+}
+
+function addNewStartingMarker(startLat,startLong) {
+  console.log("startLat");
+  console.log(startLat)
+  console.log("startLong");
+  console.log(startLong);
+
+  startingMarker = L.shapeMarker([startLat, startLong], {
+    shape: "triangle",
+    radius: 10,
+    color: "red",
+    fill: true,
+    fillOpacity: 1.0
+  })
+
+  startingMarker.addTo(mymap)
+}
+
+function addNewDestinationMarker(e){
+  console.log("latlang")
+  console.log(e.latlng)
+  destinationMarker = L.shapeMarker(e.latlng, {
+    draggable:true,
+    shape: "circle",
+    radius: 10,
+    color: "blue",
+    fill: true,
+    fillOpacity: 1.0
+  });
+  destinationMarker.addTo(mymap).on('dragend', function() {
+  });
 }

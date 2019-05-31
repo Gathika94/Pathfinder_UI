@@ -1,7 +1,7 @@
 {
   "ids": {
     "Todo": 11,
-    "DevicePos": 2
+    "DevicePos": 4
   },
   "models": {
     "Todo": {
@@ -16,7 +16,9 @@
       "10": "{\"title\":\"asdfasd\",\"desc\":\"asdfas\",\"isComplete\":true,\"id\":10}"
     },
     "DevicePos": {
-      "1": "{\"id\":1,\"timestamp\":\"2019-05-29T05:46:24.274Z\",\"lat\":6.798123810285711,\"long\":79.89934290802692,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"self\"}"
+      "1": "{\"id\":1,\"timestamp\":\"2019-05-29T05:46:24.274Z\",\"lat\":6.798123810285711,\"long\":79.89934290802692,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"self\"}",
+      "2": "{\"id\":2,\"timestamp\":\"2019-05-29T11:48:19.621Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\"}",
+      "3": "{\"id\":3,\"timestamp\":\"2019-05-29T12:06:54.396Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\"}"
     }
   }
 }
