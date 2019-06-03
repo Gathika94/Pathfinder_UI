@@ -12,7 +12,7 @@ export class Journey extends Entity {
   @property({
     type: 'number',
   })
-  destination?: number;
+  destinationLat?: number;
 
   @property({
     type: 'number',
