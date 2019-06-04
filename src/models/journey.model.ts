@@ -4,8 +4,8 @@ import {Entity, model, property} from '@loopback/repository';
 export class Journey extends Entity {
   @property({
     type: 'number',
+    generated: true,
     id: true,
-    required: true,
   })
   id: number;
 

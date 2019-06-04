@@ -2,6 +2,11 @@ var marker;
 var mymap;
 var destinationMarker = null;
 var startingMarker = null;
+var template = '<div id="popup-form">\
+   <button id="button-submit" type="button">Save Changes</button>\
+</div>';
+
+
 
 $(document).ready(function () {
 
@@ -147,6 +152,8 @@ function addNewDestinationMarker(e){
     fill: true,
     fillOpacity: 1.0
   });
+  destinationMarker.bindPopup(template);
   destinationMarker.addTo(mymap).on('dragend', function() {
   });
+
 }

@@ -4,6 +4,7 @@ import {Entity, model, property} from '@loopback/repository';
 export class DevicePos extends Entity {
   @property({
     type: 'number',
+    generated: true,
     id: true,
   })
   id?: number;

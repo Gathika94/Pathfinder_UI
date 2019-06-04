@@ -2,7 +2,7 @@
   "ids": {
     "Todo": 11,
     "DevicePos": 4,
-    "Journey": 2
+    "Journey": 4
   },
   "models": {
     "Todo": {
@@ -22,7 +22,9 @@
       "3": "{\"id\":3,\"timestamp\":\"2019-05-29T12:06:54.396Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\"}"
     },
     "Journey": {
-      "1": "{\"id\":1,\"destinationLat\":6.89,\"destinationLong\":6.52,\"mode\":\"self\",\"command\":\"string\"}"
+      "1": "{\"id\":1,\"destinationLat\":6.89,\"destinationLong\":6.52,\"mode\":\"self\",\"command\":\"string\"}",
+      "2": "{\"destinationLat\":6.798123810285711,\"destinationLong\":79.89934290802692,\"mode\":\"self\",\"command\":\"string\",\"id\":2}",
+      "3": "{\"destinationLat\":6.798123810285711,\"destinationLong\":79.89934290802692,\"mode\":\"self\",\"command\":\"string\",\"id\":3}"
     }
   }
 }
