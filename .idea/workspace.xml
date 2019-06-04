@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73decb52-40b6-4d08-8798-7d45d82ca9b5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/core/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/core/jquery.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/pages/walker.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/pages/walker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/plugins/handlebars.min-v3.0.5.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/plugins/handlebars.min-v3.0.5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/newpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/newpage.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/js/pages/walker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="214" column="3" lean-forward="true" selection-start-line="214" selection-start-column="3" selection-end-line="214" selection-end-column="3" />
+            <state relative-caret-position="270">
+              <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
               <folding>
                 <element signature="e#0#6#0" expanded="true" />
                 <element signature="e#0#6#0" expanded="true" />
@@ -260,12 +256,12 @@
       <workItem from="1559035429264" duration="18623000" />
       <workItem from="1559129021163" duration="6569000" />
       <workItem from="1559277812066" duration="5246000" />
-      <workItem from="1559533371289" duration="21089000" />
+      <workItem from="1559533371289" duration="22803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104553000" />
+    <option name="totallyTimeSpent" value="106267000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -295,7 +291,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="TypeScript" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.041942604" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.15783665" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -537,8 +533,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/pages/walker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="214" column="3" lean-forward="true" selection-start-line="214" selection-start-column="3" selection-end-line="214" selection-end-column="3" />
+        <state relative-caret-position="270">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
           <folding>
             <element signature="e#0#6#0" expanded="true" />
             <element signature="e#0#6#0" expanded="true" />

@@ -11,6 +11,10 @@ var startTemplate = '<div id="popup-form">\
    <button id="button-submit" type="button">Start</button>\
 </div>';
 
+var endTemplate =  '<div id="popup-form">\
+   <button id="button-submit" type="button">Cancel</button>\
+</div>';
+
 
 
 $(document).ready(function () {
@@ -212,6 +216,22 @@ function destinationClickHandler(e) {
       markerClicked=false;
       ongoingJourney=true;
     });
-  }
+  }else{
+    let marker = e.target;
 
+    if (marker.hasOwnProperty('_popup')) {
+      marker.unbindPopup();
+      console.log("aaaaa")
+    }
+
+    marker.bindPopup(endTemplate);
+    marker.openPopup();
+
+    let buttonSubmit = L.DomUtil.get('button-submit');
+    L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
+      marker.closePopup();
+      markerClicked=false;
+      ongoingJourney=false;
+    });
+  }
 }
