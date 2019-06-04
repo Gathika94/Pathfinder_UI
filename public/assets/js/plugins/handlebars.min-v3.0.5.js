@@ -125,7 +125,7 @@ function(a,b){
 function(a,b,c){"use strict";function d(a){var b=a&&a[0]||1,c=q.COMPILER_REVISION;if(b!==c){if(b<c){var d=q.REVISION_CHANGES[c],e=q.REVISION_CHANGES[b];throw new p["default"]("Template was precompiled with an older version of Handlebars than the current runtime. Please update your precompiler to a newer version ("+d+") or downgrade your runtime to an older version ("+e+").")}
 // Use the embedded version info since the runtime doesn't know about this revision yet
 throw new p["default"]("Template was precompiled with a newer version of Handlebars than the current runtime. Please update your runtime to a newer version ("+a[1]+").")}}function e(a,b){function c(c,d,e){e.hash&&(d=n.extend({},d,e.hash)),c=b.VM.resolvePartial.call(this,c,d,e);var f=b.VM.invokePartial.call(this,c,d,e);if(null==f&&b.compile&&(e.partials[e.name]=b.compile(c,a.compilerOptions,b),f=e.partials[e.name](d,e)),null!=f){if(e.indent){for(var g=f.split("\n"),h=0,i=g.length;h<i&&(g[h]||h+1!==i);h++)g[h]=e.indent+g[h];f=g.join("\n")}return f}throw new p["default"]("The partial "+e.name+" could not be compiled when running in runtime-only mode")}function d(b){var c=arguments.length<=1||void 0===arguments[1]?{}:arguments[1],f=c.data;d._setup(c),!c.partial&&a.useData&&(f=j(b,f));var g=void 0,h=a.useBlockParams?[]:void 0;return a.useDepths&&(g=c.depths?[b].concat(c.depths):[b]),a.main.call(e,b,e.helpers,e.partials,f,h,g)}/* istanbul ignore next */
-if(!b)throw new p["default"]("No environment passed to template");if(!a||!a.main)throw new p["default"]("Unknown template object: "+typeof a);
+if(!b)throw new p["default"]("No environment passed to startTemplate");if(!a||!a.main)throw new p["default"]("Unknown startTemplate object: "+typeof a);
 // Note: Using env.VM references rather than local var references throughout this section to allow
 // for external users to override these as psuedo-supported APIs.
 b.VM.checkRevision(a.compiler);
@@ -283,7 +283,7 @@ this.lastContext=0,this.source=new m["default"](this.options.srcName)},createFun
 // When using true SourceNodes, this will update all references to the given alias
 // as the source nodes are reused in situ. For the non-source node compilation mode,
 // aliases will not be used, but this case is already being run on the client and
-// we aren't concern about minimizing the template size.
+// we aren't concern about minimizing the startTemplate size.
 var d=0;for(var e in this.aliases){
 // eslint-disable-line guard-for-in
 var f=this.aliases[e];this.aliases.hasOwnProperty(e)&&f.children&&f.referenceCount>1&&(b+=", alias"+ ++d+"="+e,f.children[0]="alias"+d)}var g=["depth0","helpers","partials","data"];(this.useBlockParams||this.useDepths)&&g.push("blockParams"),this.useDepths&&g.push("depths");

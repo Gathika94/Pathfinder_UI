@@ -1,9 +1,14 @@
+
+
 var marker;
 var mymap;
 var destinationMarker = null;
 var startingMarker = null;
-var template = '<div id="popup-form">\
-   <button id="button-submit" type="button">Save Changes</button>\
+var ongoingJourney = false;
+var markerClicked = false;
+
+var startTemplate = '<div id="popup-form">\
+   <button id="button-submit" type="button">Start</button>\
 </div>';
 
 
@@ -74,18 +79,27 @@ $(document).ready(function () {
 
 
   mymap.on('click', function (e) {
-    if (destinationMarker) { // check
-      mymap.removeLayer(destinationMarker); // remove
-      destinationMarker=null;
-      addNewDestinationMarker(e)
-      console.log(e.latlng)
-      console.log(mymap.getZoom())
-    }else {
-      /*destinationMarker = new L.Marker(e.latlng).addTo(mymap); // set
-      console.log(e.latlng)
-      console.log(mymap.getZoom())*/
-      addNewDestinationMarker(e);
-    }
+      if (destinationMarker) { // check
+        if(!ongoingJourney) {
+          if(!markerClicked) {
+            console.log("removing layer")
+            mymap.removeLayer(destinationMarker); // remove
+            destinationMarker = null;
+            addNewDestinationMarker(e);
+
+            console.log(e.latlng)
+            console.log(mymap.getZoom())
+          }
+          markerClicked=false;
+        }
+      }else {
+        /*destinationMarker = new L.Marker(e.latlng).addTo(mymap); // set
+        console.log(e.latlng)
+        console.log(mymap.getZoom())*/
+        addNewDestinationMarker(e);
+
+      }
+
   })
   getLatestDevicePosition();
 });
@@ -152,8 +166,52 @@ function addNewDestinationMarker(e){
     fill: true,
     fillOpacity: 1.0
   });
-  destinationMarker.bindPopup(template);
+  destinationMarker.on('click',destinationClickHandler)
   destinationMarker.addTo(mymap).on('dragend', function() {
   });
+
+ /* destinationMarker.bindPopup(startTemplate);
+  destinationMarker.addTo(mymap).on('dragend', function() {
+  });
+
+  var buttonSubmit = L.DomUtil.get('button-submit');
+  L.DomEvent.addListener(buttonSubmit, 'click', function(e) {
+    destinationMarker.closePopup();
+    if(ongoingJourney){
+      console.log("ongoingJourney old :" + ongoingJourney)
+      ongoingJourney=false;
+      console.log("ongoingJourney new :" + ongoingJourney)
+    }else{
+      console.log("ongoingJourney old :" + ongoingJourney)
+      ongoingJourney=true;
+      console.log("ongoingJourney new :" + ongoingJourney)
+    }
+  })
+ buttonSubmit.addListener('click',function(e) {
+   console.log("aaaaa")
+ })*/
+}
+
+function destinationClickHandler(e) {
+  console.log("marker clicked")
+  markerClicked=true;
+  if(!ongoingJourney){
+    let marker = e.target;
+
+    if (marker.hasOwnProperty('_popup')) {
+      marker.unbindPopup();
+      console.log("aaaaa")
+    }
+
+    marker.bindPopup(startTemplate);
+    marker.openPopup();
+
+    let buttonSubmit = L.DomUtil.get('button-submit');
+    L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
+      marker.closePopup();
+      markerClicked=false;
+      ongoingJourney=true;
+    });
+  }
 
 }
