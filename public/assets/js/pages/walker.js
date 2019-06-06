@@ -201,6 +201,7 @@ function destinationClickHandler(e) {
   markerClicked=true;
   if(!ongoingJourney){
     let marker = e.target;
+    let markerEvent = e;
 
     if (marker.hasOwnProperty('_popup')) {
       marker.unbindPopup();
@@ -214,7 +215,9 @@ function destinationClickHandler(e) {
     L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
       marker.closePopup();
       markerClicked=false;
+      addNewStartJourneyInformation(markerEvent)
       ongoingJourney=true;
+
     });
   }else{
     let marker = e.target;
@@ -231,7 +234,80 @@ function destinationClickHandler(e) {
     L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
       marker.closePopup();
       markerClicked=false;
+      addCancelJourneyInformation(e)
       ongoingJourney=false;
     });
   }
+}
+
+function addNewStartJourneyInformation(e) {
+  /*var journeyData = {
+    "destinationLat": 0,
+    "destinationLong": 0,
+    "mode": "self",
+    "command": "string"
+  };
+  $.ajax({
+    type: "POST",
+    url: "http://127.0.0.1:3000/journeys",
+    //dataType:"text",
+    accept: "application/json",
+    contentType: "application/json",
+    data: {
+      "destinationLat": 0,
+      "destinationLong": 0,
+      "mode": "string",
+      "command": "string"
+    },
+    //  url: "http://127.0.0.1:5002/image?path=" + imagePath,
+    success: function (data) {
+      console.log("journey Saved");
+    },
+    error: function (jqXHR, status, err) {
+      console.log(err)
+      console.log(jqXHR);
+      console.log(status)
+      alert("Error when receiving the data from external server");
+
+    },
+  })*/
+
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "http://127.0.0.1:3000/journeys",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "cache-control": "no-cache",
+      "Postman-Token": "b33dda5d-a324-4811-958d-252d2c0928ca"
+    },
+    "processData": false,
+    "data": "{\n  \"destinationLat\": 0,\n  \"destinationLong\": 0,\n  \"mode\": \"string\",\n  \"command\": \"string\"\n}"
+  }
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+}
+
+function addCancelJourneyInformation() {
+  $.ajax({
+    type: "POST",
+    dataType: "json",
+    url: "http://127.0.0.1:3000/journeys",
+    data: {
+      "destinationLat": e.lat,
+      "destinationLong": e.long,
+      "mode": "cancel",
+      "command": "string"
+    },
+    //  url: "http://127.0.0.1:5002/image?path=" + imagePath,
+    success: function (data) {
+      console.log("journey Saved");
+    },
+    error: function (jqXHR, status, err) {
+      alert("Error when receiving the data from external server");
+    },
+  })
 }
