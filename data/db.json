@@ -2,7 +2,7 @@
   "ids": {
     "Todo": 11,
     "DevicePos": 5,
-    "Journey": 7
+    "Journey": 17
   },
   "models": {
     "Todo": {
@@ -28,7 +28,17 @@
       "3": "{\"destinationLat\":6.798123810285711,\"destinationLong\":79.89934290802692,\"mode\":\"self\",\"command\":\"string\",\"id\":3}",
       "4": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":4}",
       "5": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":5}",
-      "6": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":6}"
+      "6": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":6}",
+      "7": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":7}",
+      "8": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":8}",
+      "9": "{\"destinationLat\":6.798515322787258,\"destinationLong\":79.89899933338167,\"mode\":\"string\",\"command\":\"string\",\"id\":9}",
+      "10": "{\"destinationLat\":6.798478035896093,\"destinationLong\":79.89893496036531,\"mode\":\"self\",\"command\":\"none\",\"id\":10}",
+      "11": "{\"destinationLat\":6.798528639533408,\"destinationLong\":79.89892423152925,\"mode\":\"self\",\"command\":\"none\",\"id\":11}",
+      "12": "{\"destinationLat\":6.798488689293867,\"destinationLong\":79.89899665117265,\"mode\":\"self\",\"command\":\"none\",\"id\":12}",
+      "13": "{\"destinationLat\":6.798254314488325,\"destinationLong\":79.89907979965211,\"mode\":\"self\",\"command\":\"none\",\"id\":13}",
+      "14": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"self\",\"command\":\"none\",\"id\":14}",
+      "15": "{\"destinationLat\":6.798557936373622,\"destinationLong\":79.89891886711122,\"mode\":\"self\",\"command\":\"start\",\"id\":15}",
+      "16": "{\"destinationLat\":6.798557936373622,\"destinationLong\":79.89891886711122,\"mode\":\"self\",\"command\":\"cancel\",\"id\":16}"
     }
   }
 }

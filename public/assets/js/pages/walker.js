@@ -86,7 +86,8 @@ $(document).ready(function () {
       if (destinationMarker) { // check
         if(!ongoingJourney) {
           if(!markerClicked) {
-            console.log("removing layer")
+            console.log("cccc");
+            console.log("removing layer");
             mymap.removeLayer(destinationMarker); // remove
             destinationMarker = null;
             addNewDestinationMarker(e);
@@ -213,6 +214,7 @@ function destinationClickHandler(e) {
 
     let buttonSubmit = L.DomUtil.get('button-submit');
     L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
+      console.log("bbbb");
       marker.closePopup();
       markerClicked=false;
       addNewStartJourneyInformation(markerEvent)
@@ -221,6 +223,7 @@ function destinationClickHandler(e) {
     });
   }else{
     let marker = e.target;
+    let markerEvent = e;
 
     if (marker.hasOwnProperty('_popup')) {
       marker.unbindPopup();
@@ -234,7 +237,7 @@ function destinationClickHandler(e) {
     L.DomEvent.addListener(buttonSubmit, 'click', function (e) {
       marker.closePopup();
       markerClicked=false;
-      addCancelJourneyInformation(e)
+      addCancelJourneyInformation(markerEvent)
       ongoingJourney=false;
     });
   }
@@ -272,6 +275,9 @@ function addNewStartJourneyInformation(e) {
     },
   })*/
 
+  let latitude = e.latlng.lat;
+  let longitude = e.latlng.lng;
+
   var settings = {
     "async": true,
     "crossDomain": true,
@@ -283,7 +289,7 @@ function addNewStartJourneyInformation(e) {
       "Postman-Token": "b33dda5d-a324-4811-958d-252d2c0928ca"
     },
     "processData": false,
-    "data": "{\n  \"destinationLat\": 0,\n  \"destinationLong\": 0,\n  \"mode\": \"string\",\n  \"command\": \"string\"\n}"
+    "data": "{\n  \"destinationLat\": "+latitude.toString()+",\n  \"destinationLong\":"+ longitude.toString()+",\n  \"mode\": \"self\",\n  \"command\": \"start\"\n}"
   }
 
   $.ajax(settings).done(function (response) {
@@ -291,17 +297,19 @@ function addNewStartJourneyInformation(e) {
   });
 }
 
-function addCancelJourneyInformation() {
+function addCancelJourneyInformation(e) {
+  let latitude = e.latlng.lat;
+  let longitude = e.latlng.lng;
   $.ajax({
     type: "POST",
-    dataType: "json",
-    url: "http://127.0.0.1:3000/journeys",
-    data: {
-      "destinationLat": e.lat,
-      "destinationLong": e.long,
-      "mode": "cancel",
-      "command": "string"
+    headers: {
+      "Content-Type": "application/json",
+      "cache-control": "no-cache",
     },
+    dataType: "text",
+    processData: false,
+    url: "http://127.0.0.1:3000/journeys",
+    data: "{\n  \"destinationLat\":"+latitude+",\n  \"destinationLong\":"+longitude+",\n  \"mode\": \"self\",\n  \"command\": \"cancel\"\n}",
     //  url: "http://127.0.0.1:5002/image?path=" + imagePath,
     success: function (data) {
       console.log("journey Saved");
