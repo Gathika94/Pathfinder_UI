@@ -115,51 +115,49 @@
             </div>
         </nav>
 
-        <div class="row"> <h1></h1> </div>
-        <div class="row"> <h1></h1></div>
-        <div class="row"> <h1></h1></div>
-        <div class="row">  </div>
-        <div class="row"> </div>
-        <div class="row"> </div>
+        <div class="row"><h1></h1></div>
+        <div class="row"><h1></h1></div>
+        <div class="row"><h1></h1></div>
+        <div class="row"></div>
+        <div class="row"></div>
+        <div class="row"></div>
 
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-3 offset-md-4 offset-sm-4">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-7 col-md-8  offset-md-4 offset-sm-4">
-                                <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-check-2 text-success"></i>
-                                </div>
-                            </div>
-                        </div>
+        <div id="steeringWheel">
+            <div class="row justify-content-center">
+                <button id = "up-command" class="card card-stats">
+                    <div class="card-body icon-big  icon-warning">
+                        <span class="fas fa-caret-up" style="padding-bottom: 50%"></span>
                     </div>
+                </button>
+            </div>
+            <div class="row">
+                <div class="col-4 " style="padding-left: 10%">
+                    <button id = "left-command" class="card card-stats">
+                        <div class="card-body icon-big  icon-warning">
+                            <span class="fas fa-caret-left"  ></span>
+                        </div>
+                    </button>
                 </div>
+                <div class="col-4">
+
+                </div>
+                <div class="col-4" style="padding-right: 10%">
+                    <button id = "right-command" class="card card-stats">
+                        <div class="card-body icon-big  icon-warning">
+                            <span class="fas fa-caret-right" ></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <button id = "down-command" class="card card-stats">
+                    <div class="card-body icon-big  icon-warning">
+                        <span class="fas fa-caret-down" style="padding-top: 50%"></span>
+                    </div>
+                </button>
             </div>
         </div>
 
-
-        <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card card-stats">
-                    <div class="card-body ">
-                        <div class="row">
-                            <div class="col-5 col-md-4">
-                                <div class="icon-big text-center icon-warning">
-                                    <i class="nc-icon nc-check-2 text-success"></i>
-                                </div>
-                            </div>
-                            <div class="col-7 col-md-8">
-                                <div class="numbers">
-                                    <p class="card-category">left</p>
-                                    <p class="card-title" id="queue-left"> </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     </div>
 </div>
@@ -180,14 +178,14 @@
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     // url points to a json file that contains an array of country names, see
     // https://github.com/twitter/typeahead.js/blob/gh-pages/data/countries.json
-    prefetch: 'cities.json'
+    prefetch: 'cities.json',
   });
 
   // passing in `null` for the `options` arguments will result in the default
   // options being used
   $('#prefetch .typeahead').typeahead(null, {
     name: 'cities',
-    source: cities
+    source: cities,
   });
 </script>
 
