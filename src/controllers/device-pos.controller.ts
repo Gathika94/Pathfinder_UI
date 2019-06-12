@@ -70,7 +70,7 @@ export class DevicePosController {
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(DevicePos)) filter?: Filter,
+    @param.query.object('filter', getFilterSchemaFor(DevicePos)) filter?: Filter<DevicePos>,
   ): Promise<DevicePos[]> {
     console.log("filter")
     console.log(filter)
