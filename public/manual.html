@@ -52,7 +52,8 @@
     </div>
     <div class="main-panel">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent" style="background-color: whitesmoke">
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent"
+             style="background-color: whitesmoke">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
                     <div class="navbar-toggle">
@@ -117,29 +118,40 @@
 
         <div class="row"><h1></h1></div>
         <div class="row"><h1></h1></div>
-        <div class="row"><h1></h1></div>
         <div class="row"></div>
         <div class="row"></div>
         <div class="row"></div>
 
-        <div id="manual-status">
+        <div id="manual-status" style="background: transparent">
             <div class="row">
-                <div class="col" style="padding-left: 15%">
-                    <button id="light-status" class="card card-stats">
-                        <div class="card-body icon-big text-center icon-warning">
-                            <span class="fas fa-triangle"></span>
+                <div class="col" style="padding-left: 10% ; background: transparent; border-color: transparent">
+                    <div id="light-status" style="background: transparent; border-color: transparent; width:100%;height: 200%">
+                        <div class="card-body icon-big text-center icon-warning" style="width: 100%;height: 150%">
+
+                            <div class="transparent-circle">
+                                <img src="./assets/img/light_on_transparent.jpg" style="position: relative; top:20%;width: 50px;height: 50px"></img>
+                            </div>
+
                         </div>
-                    </button>
+                    </div>
                 </div>
-                <div class="col">
-                    <button id="battery-status" class="card card-stats">
-                        <div class="card-body icon-big text-center icon-warning">
-                            <span class="fas fa-charging-station"></span>
+                <div class="col" style="padding-right: 10%;background: transparent; border-color: transparent">
+                    <div id="battery-status" style="background: transparent; border-color: transparent; width:100%;height: 200%">
+                        <div class="card-body icon-big text-center icon-warning" style="width: 100%;height: 150%">
+
+                            <div class="transparent-circle">
+                                <div style="position: relative; top:30%;width: 50px;height: 50px">
+                                    86%
+                                </div>
+                            </div>
+
                         </div>
-                    </button>
+                    </div>
                 </div>
+
             </div>
         </div>
+
 
 
         <div id="steeringWheel" style="margin-left: 5%; margin-right:5%;">
@@ -191,6 +203,8 @@
                 </div>
             </div>
         </div>
+        <div class="row"><h1></h1></div>
+        <div class="row"><h1></h1></div>
 
 
     </div>
