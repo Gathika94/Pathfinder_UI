@@ -64,7 +64,7 @@ export class JourneyController {
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(Journey)) filter?: Filter,
+    @param.query.object('filter', getFilterSchemaFor(Journey)) filter?: Filter<Journey>,
   ): Promise<Journey[]> {
     return await this.journeyRepository.find(filter);
   }

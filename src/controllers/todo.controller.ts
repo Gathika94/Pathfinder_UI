@@ -64,7 +64,7 @@ export class TodoController {
     },
   })
   async find(
-    @param.query.object('filter', getFilterSchemaFor(Todo)) filter?: Filter,
+    @param.query.object('filter', getFilterSchemaFor(Todo)) filter?: Filter<Todo>,
   ): Promise<Todo[]> {
     return await this.todoRepository.find(filter);
   }
