@@ -1,8 +1,8 @@
 {
   "ids": {
     "Todo": 11,
-    "DevicePos": 5,
-    "Journey": 17
+    "DevicePos": 9,
+    "Journey": 27
   },
   "models": {
     "Todo": {
@@ -20,25 +20,18 @@
       "1": "{\"id\":1,\"timestamp\":\"2019-05-29T05:46:24.274Z\",\"lat\":6.798123810285711,\"long\":79.89934290802692,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"self\"}",
       "2": "{\"id\":2,\"timestamp\":\"2019-05-29T11:48:19.621Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\"}",
       "3": "{\"id\":3,\"timestamp\":\"2019-05-29T12:06:54.396Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\"}",
-      "4": "{\"timestamp\":\"2019-06-06T06:37:50.821Z\",\"lat\":6.798123810285711,\"long\":79.89934290802692,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\",\"id\":4}"
+      "4": "{\"timestamp\":\"2019-06-06T06:37:50.821Z\",\"lat\":6.798123810285711,\"long\":79.89934290802692,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\",\"id\":4}",
+      "5": "{\"timestamp\":\"2019-06-12T06:33:02.971Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\",\"id\":5}",
+      "6": "{\"timestamp\":\"2019-06-12T06:36:31.306Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\",\"id\":6}",
+      "7": "{\"timestamp\":\"2019-06-12T06:36:57.427Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\",\"id\":7}",
+      "8": "{\"timestamp\":\"2019-06-12T06:39:41.474Z\",\"lat\":0,\"long\":0,\"direction\":0,\"sat\":0,\"speed\":0,\"mode\":\"string\",\"id\":8}"
     },
     "Journey": {
-      "1": "{\"id\":1,\"destinationLat\":6.89,\"destinationLong\":6.52,\"mode\":\"self\",\"command\":\"string\"}",
-      "2": "{\"destinationLat\":6.798123810285711,\"destinationLong\":79.89934290802692,\"mode\":\"self\",\"command\":\"string\",\"id\":2}",
-      "3": "{\"destinationLat\":6.798123810285711,\"destinationLong\":79.89934290802692,\"mode\":\"self\",\"command\":\"string\",\"id\":3}",
-      "4": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":4}",
-      "5": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":5}",
-      "6": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":6}",
-      "7": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":7}",
-      "8": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"string\",\"command\":\"string\",\"id\":8}",
-      "9": "{\"destinationLat\":6.798515322787258,\"destinationLong\":79.89899933338167,\"mode\":\"string\",\"command\":\"string\",\"id\":9}",
-      "10": "{\"destinationLat\":6.798478035896093,\"destinationLong\":79.89893496036531,\"mode\":\"self\",\"command\":\"none\",\"id\":10}",
-      "11": "{\"destinationLat\":6.798528639533408,\"destinationLong\":79.89892423152925,\"mode\":\"self\",\"command\":\"none\",\"id\":11}",
-      "12": "{\"destinationLat\":6.798488689293867,\"destinationLong\":79.89899665117265,\"mode\":\"self\",\"command\":\"none\",\"id\":12}",
-      "13": "{\"destinationLat\":6.798254314488325,\"destinationLong\":79.89907979965211,\"mode\":\"self\",\"command\":\"none\",\"id\":13}",
-      "14": "{\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"self\",\"command\":\"none\",\"id\":14}",
-      "15": "{\"destinationLat\":6.798557936373622,\"destinationLong\":79.89891886711122,\"mode\":\"self\",\"command\":\"start\",\"id\":15}",
-      "16": "{\"destinationLat\":6.798557936373622,\"destinationLong\":79.89891886711122,\"mode\":\"self\",\"command\":\"cancel\",\"id\":16}"
+      "1": "{\"timestamp\":\"2019-06-12T05:51:05.103Z\",\"destinationLat\":6.7985978866074115,\"destinationLong\":79.89916294813158,\"mode\":\"self\",\"command\":\"start\",\"id\":22}",
+      "23": "{\"timestamp\":\"2019-06-12T06:36:46.759Z\",\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"manual\",\"command\":\"up\",\"id\":23}",
+      "24": "{\"timestamp\":\"2019-06-12T08:54:09.268Z\",\"destinationLat\":6.798669797019842,\"destinationLong\":79.89944994449617,\"mode\":\"self\",\"command\":\"start\",\"id\":24}",
+      "25": "{\"timestamp\":\"2019-06-12T08:54:10.861Z\",\"destinationLat\":6.798669797019842,\"destinationLong\":79.89944994449617,\"mode\":\"self\",\"command\":\"cancel\",\"id\":25}",
+      "26": "{\"timestamp\":\"2019-06-12T09:40:12.821Z\",\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"manual\",\"command\":\"down\",\"id\":26}"
     }
   }
 }

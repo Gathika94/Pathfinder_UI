@@ -16,13 +16,16 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {DevicePos} from '../models';
+import {DevicePos, Journey} from '../models';
 import {DevicePosRepository} from '../repositories';
+import {JourneyRepository} from '../repositories';
 
 export class DevicePosController {
   constructor(
     @repository(DevicePosRepository)
     public devicePosRepository : DevicePosRepository,
+    @repository(JourneyRepository)
+    public journeyRepository:JourneyRepository,
   ) {}
 
   @post('/device-pos', {
@@ -33,8 +36,11 @@ export class DevicePosController {
       },
     },
   })
-  async create(@requestBody() devicePos: DevicePos): Promise<DevicePos> {
-    return await this.devicePosRepository.create(devicePos);
+  async create(@requestBody() devicePos: DevicePos): Promise<Journey[]> {
+    //return await this.devicePosRepository.create(devicePos);
+    let devicePosition = await this.devicePosRepository.create(devicePos);
+    console.log(devicePosition);
+    return await this.journeyRepository.find({order: ['timestamp DESC'], limit: 1})
   }
 
   @get('/device-pos/count', {
@@ -66,6 +72,8 @@ export class DevicePosController {
   async find(
     @param.query.object('filter', getFilterSchemaFor(DevicePos)) filter?: Filter,
   ): Promise<DevicePos[]> {
+    console.log("filter")
+    console.log(filter)
     return await this.devicePosRepository.find(filter);
   }
 

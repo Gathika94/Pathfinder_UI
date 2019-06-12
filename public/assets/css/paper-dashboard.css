@@ -5021,7 +5021,7 @@ License - nucleoapp.com/license/
   position: relative;
   float: right;
   width: calc(100% - 260px);
-  background-color: #f4f3ef;
+  background: linear-gradient(to bottom, #8794a4 0%, #141C2F 90%);
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -5475,7 +5475,7 @@ License - nucleoapp.com/license/
 .card {
   border-radius: 12px;
   box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
-  background-color: #FFFFFF;
+  background-color: #626F7F;
   color: #252422;
   margin-bottom: 20px;
   position: relative;

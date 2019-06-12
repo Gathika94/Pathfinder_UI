@@ -19,7 +19,7 @@
 </head>
 <body class="">
 <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-active-color="danger">
+    <div class="sidebar" data-color="orange" data-active-color="danger" style="background-color: whitesmoke">
         <!--
           Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
       -->
@@ -52,7 +52,7 @@
     </div>
     <div class="main-panel">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent" style="background-color: whitesmoke">
             <div class="container-fluid">
                 <div class="navbar-wrapper">
                     <div class="navbar-toggle">
@@ -122,39 +122,73 @@
         <div class="row"></div>
         <div class="row"></div>
 
-        <div id="steeringWheel">
-            <div class="row justify-content-center">
-                <button id = "up-command" class="card card-stats">
-                    <div class="card-body icon-big  icon-warning">
-                        <span class="fas fa-caret-up" style="padding-bottom: 50%"></span>
-                    </div>
-                </button>
-            </div>
+        <div id="manual-status">
             <div class="row">
-                <div class="col-4 " style="padding-left: 10%">
-                    <button id = "left-command" class="card card-stats">
-                        <div class="card-body icon-big  icon-warning">
-                            <span class="fas fa-caret-left"  ></span>
+                <div class="col" style="padding-left: 15%">
+                    <button id="light-status" class="card card-stats">
+                        <div class="card-body icon-big text-center icon-warning">
+                            <span class="fas fa-triangle"></span>
                         </div>
                     </button>
                 </div>
-                <div class="col-4">
-
-                </div>
-                <div class="col-4" style="padding-right: 10%">
-                    <button id = "right-command" class="card card-stats">
-                        <div class="card-body icon-big  icon-warning">
-                            <span class="fas fa-caret-right" ></span>
+                <div class="col">
+                    <button id="battery-status" class="card card-stats">
+                        <div class="card-body icon-big text-center icon-warning">
+                            <span class="fas fa-charging-station"></span>
                         </div>
                     </button>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <button id = "down-command" class="card card-stats">
-                    <div class="card-body icon-big  icon-warning">
-                        <span class="fas fa-caret-down" style="padding-top: 50%"></span>
+        </div>
+
+
+        <div id="steeringWheel" style="margin-left: 5%; margin-right:5%;">
+            <div class="circle-container">
+                <div class="outer-circle">
+
+                    <div class="row"><h1></h1></div>
+                    <div class="row justify-content-center">
+                        <div style="padding-top: -5%">
+                            <button id="up-command" class="card card-stats">
+                                <div class=" card-body icon-big  icon-warning">
+                                    <span class="fas fa-caret-up"></span>
+                                </div>
+                            </button>
+                        </div>
                     </div>
-                </button>
+
+                    <div class="row"><h1></h1></div>
+                    <div class="row">
+                        <div class="col-4 " style="padding-left: 5%">
+                            <button id="left-command" class="card card-stats">
+                                <div class="card-body icon-big  icon-warning">
+                                    <span class="fas fa-caret-left"></span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="col-4">
+                            <div class="inner-circle">
+
+                            </div>
+
+                        </div>
+                        <div class="col-4" style="padding-left: 10%">
+                            <button id="right-command" class="card card-stats">
+                                <div class="card-body icon-big  icon-warning">
+                                    <span class="fas fa-caret-right"></span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row"><h1></h1></div>
+                    <div class="row justify-content-center">
+                        <button id="down-command" class="card card-stats">
+                            <div class="card-body icon-big  icon-warning">
+                                <span class="fas fa-caret-down" style="padding-top: 50%"></span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -171,6 +205,7 @@
 <script src="assets/js/plugins/typeahead.bundle.min.js"></script>
 <script src="assets/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
 <script src="assets/js/common.js" type="text/javascript"></script>
+<script src="assets/js/pages/manualcontrol.js" type="text/javascript"></script>
 
 <script>
   var cities = new Bloodhound({

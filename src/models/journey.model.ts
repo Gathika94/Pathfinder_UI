@@ -10,6 +10,13 @@ export class Journey extends Entity {
   id: number;
 
   @property({
+    type: 'date',
+    required: false,
+    default: "$now",
+  })
+  timestamp: string;
+
+  @property({
     type: 'number',
   })
   destinationLat?: number;
