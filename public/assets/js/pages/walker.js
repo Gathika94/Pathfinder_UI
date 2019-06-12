@@ -113,7 +113,7 @@ function getLatestDevicePosition() {
   $.ajax({
     type: "GET",
     //dataType: "json",
-    url: "http://localhost:3000/device-pos?filter[order]=timestamp ASC&filter[limit]=1",
+    url: "/device-pos?filter[order]=timestamp ASC&filter[limit]=1",
     success: function (data) {
       //console.log(data[0]);
       var jsonObject = data[0];
@@ -281,7 +281,7 @@ function addNewStartJourneyInformation(e) {
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://127.0.0.1:3000/journeys",
+    "url": "/journeys",
     "method": "POST",
     "headers": {
       "Content-Type": "application/json",
@@ -308,7 +308,7 @@ function addCancelJourneyInformation(e) {
     },
     dataType: "text",
     processData: false,
-    url: "http://127.0.0.1:3000/journeys",
+    url: "/journeys",
     data: "{\n  \"destinationLat\":"+latitude+",\n  \"destinationLong\":"+longitude+",\n  \"mode\": \"self\",\n  \"command\": \"cancel\"\n}",
     //  url: "http://127.0.0.1:5002/image?path=" + imagePath,
     success: function (data) {

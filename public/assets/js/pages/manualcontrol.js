@@ -25,7 +25,7 @@ function journeyInformation(command) {
     },
     dataType: "text",
     processData: false,
-    url: "http://127.0.0.1:3000/journeys",
+    url: "/journeys",
     data: "{\n  \"destinationLat\":"+latitude+",\n  \"destinationLong\":"+longitude+",\n  \"mode\": \"manual\",\n  \"command\": \""+command+"\"\n}",
     success: function (data) {
       console.log("journey Saved");
