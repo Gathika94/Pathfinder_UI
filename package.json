@@ -58,7 +58,14 @@
     "@loopback/service-proxy": "^1.1.7",
     "leaflet": "^1.5.1",
     "search": "^1.0.0",
-    "@loopback/build": "^1.5.1"
+
+    "@loopback/build": "^1.5.1",
+    "@loopback/build": "^1.5.1",
+    "@loopback/testlab": "^1.2.6",
+    "@loopback/tslint-config": "^2.0.4",
+    "@types/node": "^10.11.2",
+    "tslint": "^5.15.0",
+    "typescript": "^3.4.3"
   },
   "devDependencies": {
     "@loopback/build": "^1.5.1",
