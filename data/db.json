@@ -2,7 +2,7 @@
   "ids": {
     "Todo": 11,
     "DevicePos": 9,
-    "Journey": 29
+    "Journey": 31
   },
   "models": {
     "Todo": {
@@ -33,7 +33,9 @@
       "25": "{\"timestamp\":\"2019-06-12T08:54:10.861Z\",\"destinationLat\":6.798669797019842,\"destinationLong\":79.89944994449617,\"mode\":\"self\",\"command\":\"cancel\",\"id\":25}",
       "26": "{\"timestamp\":\"2019-06-12T09:40:12.821Z\",\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"manual\",\"command\":\"down\",\"id\":26}",
       "27": "{\"timestamp\":\"2019-06-12T23:12:42.783Z\",\"destinationLat\":6.798579243165379,\"destinationLong\":79.89921391010286,\"mode\":\"self\",\"command\":\"start\",\"id\":27}",
-      "28": "{\"timestamp\":\"2019-06-12T23:13:56.692Z\",\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"manual\",\"command\":\"up\",\"id\":28}"
+      "28": "{\"timestamp\":\"2019-06-12T23:13:56.692Z\",\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"manual\",\"command\":\"up\",\"id\":28}",
+      "29": "{\"timestamp\":\"2019-06-13T00:21:16.028Z\",\"destinationLat\":6.798344868404021,\"destinationLong\":79.89921659231187,\"mode\":\"self\",\"command\":\"start\",\"id\":29}",
+      "30": "{\"timestamp\":\"2019-06-13T00:21:24.393Z\",\"destinationLat\":0,\"destinationLong\":0,\"mode\":\"manual\",\"command\":\"up\",\"id\":30}"
     }
   }
 }
