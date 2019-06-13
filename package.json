@@ -57,7 +57,8 @@
     "@loopback/rest-explorer": "^1.1.19",
     "@loopback/service-proxy": "^1.1.7",
     "leaflet": "^1.5.1",
-    "search": "^1.0.0"
+    "search": "^1.0.0",
+    "@loopback/build": "^1.5.1"
   },
   "devDependencies": {
     "@loopback/build": "^1.5.1",
