@@ -233,7 +233,7 @@
 
 .transparent-circle {
     border-radius:50px;
-    border: 2px solid #73AD21;
+    border: 7px solid #7EC452;
     width: 100px;
     height:100px;
     background: #626F7F;
@@ -245,6 +245,6 @@
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 10% 10px 10px;
-    border-color: transparent transparent #007bff transparent;
+    border-width: 0 30px 30px 30px;
+    border-color: transparent transparent #7a000a transparent;
 }
