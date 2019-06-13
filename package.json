@@ -30,7 +30,7 @@
     "docker:run": "docker run -p 3000:3000 -d todo-list",
     "migrate": "node ./dist/migrate",
     "prestart": "npm run build",
-    "start": "npm start",
+    "start": "node .",
     "dev": "nodemon node .",
     "prepublishOnly": "npm run test"
   },
