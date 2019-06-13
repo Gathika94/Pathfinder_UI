@@ -32,9 +32,7 @@
     "prestart": "npm run build",
     "start": "node .",
     "dev": "nodemon node .",
-    "prepublishOnly": "npm run test",
-    "lb-tsc": "lb-tsc",
-    "postinstall": "npm run lb-tsc"
+    "prepublishOnly": "npm run test"
   },
   "repository": {
     "type": "git"
