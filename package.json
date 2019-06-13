@@ -33,7 +33,7 @@
     "start": "node .",
     "dev": "nodemon node .",
     "prepublishOnly": "npm run test",
-    "tsc": "lb-tsc",
+    "lb-tsc": "lb-tsc",
     "postinstall": "npm run lb-tsc"
   },
   "repository": {
