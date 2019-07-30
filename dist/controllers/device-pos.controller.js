@@ -24,6 +24,8 @@ let DevicePosController = class DevicePosController {
     }
     async create(devicePos) {
         //return await this.devicePosRepository.create(devicePos);
+        console.log("devicePos : ");
+        console.log(devicePos);
         let devicePosition = await this.devicePosRepository.create(devicePos);
         console.log(devicePosition);
         return await this.journeyRepository.find({ order: ['timestamp DESC'], limit: 1 });
@@ -50,6 +52,14 @@ let DevicePosController = class DevicePosController {
     }
     async deleteById(id) {
         await this.devicePosRepository.deleteById(id);
+    }
+    async createNewDPos(lat, long, direction, sat, speed, mode) {
+        //return await this.devicePosRepository.create(devicePos);
+        console.log("devicePos : ");
+        let devicePos = { "lat": lat, "long": long, "direction": direction, "sat": sat, "speed": speed, "mode": mode };
+        let devicePosition = await this.devicePosRepository.create(devicePos);
+        console.log(devicePosition);
+        return await this.journeyRepository.find({ order: ['timestamp DESC'], limit: 1 });
     }
 };
 __decorate([
@@ -168,6 +178,22 @@ __decorate([
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", Promise)
 ], DevicePosController.prototype, "deleteById", null);
+__decorate([
+    rest_1.get('/device-pos-details', {
+        responses: {
+            '200': {
+                description: 'DevicePos model instance',
+                content: { 'application/json': { schema: { 'x-ts-type': models_1.DevicePos } } },
+            },
+        },
+    }),
+    __param(0, rest_1.param.query.number('lat')), __param(1, rest_1.param.query.number('long')),
+    __param(2, rest_1.param.query.number('direction')), __param(3, rest_1.param.query.number('sat')),
+    __param(4, rest_1.param.query.number('speed')), __param(5, rest_1.param.query.string('mode')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Number, Number, Number, Number, Number, String]),
+    __metadata("design:returntype", Promise)
+], DevicePosController.prototype, "createNewDPos", null);
 DevicePosController = __decorate([
     __param(0, repository_1.repository(repositories_1.DevicePosRepository)),
     __param(1, repository_1.repository(repositories_2.JourneyRepository)),

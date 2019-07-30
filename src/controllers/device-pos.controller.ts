@@ -20,6 +20,7 @@ import {DevicePos, Journey} from '../models';
 import {DevicePosRepository} from '../repositories';
 import {JourneyRepository} from '../repositories';
 
+
 export class DevicePosController {
   constructor(
     @repository(DevicePosRepository)
@@ -38,6 +39,8 @@ export class DevicePosController {
   })
   async create(@requestBody() devicePos: DevicePos): Promise<Journey[]> {
     //return await this.devicePosRepository.create(devicePos);
+    console.log("devicePos : ")
+    console.log(devicePos)
     let devicePosition = await this.devicePosRepository.create(devicePos);
     console.log(devicePosition);
     return await this.journeyRepository.find({order: ['timestamp DESC'], limit: 1})
@@ -141,5 +144,24 @@ export class DevicePosController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.devicePosRepository.deleteById(id);
+  }
+
+  @get('/device-pos-details', {
+    responses: {
+      '200': {
+        description: 'DevicePos model instance',
+        content: {'application/json': {schema: {'x-ts-type': DevicePos}}},
+      },
+    },
+  })
+  async createNewDPos(@param.query.number('lat') lat: number,@param.query.number('long') long: number,
+                      @param.query.number('direction') direction: number, @param.query.number('sat') sat: number,
+                      @param.query.number('speed') speed: number, @param.query.string('mode') mode: string): Promise<Journey[]> {
+    //return await this.devicePosRepository.create(devicePos);
+    console.log("devicePos : ")
+    let devicePos={"lat":lat,"long":long,"direction":direction,"sat":sat,"speed":speed,"mode":mode}
+    let devicePosition = await this.devicePosRepository.create(devicePos);
+    console.log(devicePosition);
+    return await this.journeyRepository.find({order: ['timestamp DESC'], limit: 1})
   }
 }
