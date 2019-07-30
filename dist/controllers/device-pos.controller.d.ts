@@ -14,5 +14,5 @@ export declare class DevicePosController {
     updateById(id: number, devicePos: DevicePos): Promise<void>;
     replaceById(id: number, devicePos: DevicePos): Promise<void>;
     deleteById(id: number): Promise<void>;
-    createNewDPos(lat: number, long: number, direction: number, sat: number, speed: number, mode: string): Promise<Journey[]>;
+    createNewDPos(lat: number, long: number, direction: number, sat: number, speed: number, mode: string): Promise<String>;
 }

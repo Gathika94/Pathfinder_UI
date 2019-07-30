@@ -59,7 +59,28 @@ let DevicePosController = class DevicePosController {
         let devicePos = { "lat": lat, "long": long, "direction": direction, "sat": sat, "speed": speed, "mode": mode };
         let devicePosition = await this.devicePosRepository.create(devicePos);
         console.log(devicePosition);
-        return await this.journeyRepository.find({ order: ['timestamp DESC'], limit: 1 });
+        let latestJourney = await this.journeyRepository.find({ order: ['timestamp DESC'], limit: 1 });
+        console.log("printing values");
+        const stringed = JSON.stringify(latestJourney);
+        const latestJourneyString = stringed.split(",");
+        console.log(latestJourneyString);
+        let dlatObject = latestJourneyString[2].split(":");
+        let dlat = dlatObject[1];
+        let dlongObject = latestJourneyString[3].split(":");
+        let dlong = dlongObject[1];
+        let dmodeObject = latestJourneyString[4].split(":");
+        let dmode = dmodeObject[1];
+        let dCommandObject = latestJourneyString[5].split(":");
+        let dCommand = dCommandObject[1];
+        console.log(dlat);
+        console.log(dlong);
+        console.log(dmode);
+        console.log(dCommand);
+        let stringResp = dlat + ',' + dlong + ',' + dmode.charAt(1) + ',' + dCommand.charAt(1);
+        console.log(stringResp);
+        return stringResp;
+        //return latestJourney
+        //return await this.journeyRepository.find({order: ['timestamp DESC'], limit: 1})
     }
 };
 __decorate([
