@@ -174,7 +174,7 @@ export class DevicePosController {
     let dmodeObject = latestJourneyString[4].split(":")
     let dmode=dmodeObject[1]
     let dCommandObject = latestJourneyString[5].split(":")
-    let dCommand=dCommandObject[1]
+    let dCommand=dCommandObject[1].toUpperCase()
 
 
     console.log(dlat)
