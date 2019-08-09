@@ -1,15 +1,15 @@
 $(document).ready(function () {
   $('#up-command').on('click', function (e) {
-    journeyInformation("up")
+    journeyInformation("Forward")
   })
   $('#down-command').on('click', function (e) {
-    journeyInformation("down")
+    journeyInformation("Backward")
   })
   $('#left-command').on('click', function (e) {
-    journeyInformation("left")
+    journeyInformation("Left")
   })
   $('#right-command').on('click', function (e) {
-    journeyInformation("right")
+    journeyInformation("Right")
   })
 });
 
